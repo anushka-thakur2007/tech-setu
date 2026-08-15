@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NameGate from "./components/NameGate";
 import Header from './components/Header';
 import CourseCatalog from './components/CourseCatalog';
 import PlaygroundView from './components/PlaygroundView';
@@ -108,7 +109,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+    <NameGate>
+      <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500/30">
+      <div style={{ padding: "12px 20px", color: "#10b981", fontWeight: "600" }}>
+  Hi, {localStorage.getItem("techsetu_name")} 👋
+</div>
       {/* Top Navigation & Gamification Header */}
       <Header
         userState={userState}
@@ -174,7 +179,7 @@ export default function App() {
               ⚡
             </div>
             <span className="font-extrabold text-slate-200">TechSetu</span>
-            <span className="text-slate-500">• SRTMUN Hackathon 2026-27 Proposal</span>
+            <span className="text-slate-500">•  Hackathon 2026-27 </span>
           </div>
 
           <div className="flex items-center gap-4 text-slate-400">
@@ -188,5 +193,6 @@ export default function App() {
         </div>
       </footer>
     </div>
+    </NameGate>
   );
 }

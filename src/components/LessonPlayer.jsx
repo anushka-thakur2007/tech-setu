@@ -377,7 +377,9 @@ export default function LessonPlayer({ moduleData, courseData, userState, onComp
 
             <div>
               <h2 className="text-3xl font-extrabold text-slate-100">{currentScreen.title}</h2>
-              <p className="text-slate-400 text-sm mt-1">{currentScreen.summary}</p>
+              <p className="text-slate-400 text-sm mt-1">{currentScreen.summary}</p><p className="text-emerald-400 text-sm font-semibold mt-2">
+  Great job, {localStorage.getItem("techsetu_name")}! 🎉
+</p>
             </div>
 
             <div className="flex items-center justify-center gap-4 max-w-sm mx-auto">
